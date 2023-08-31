@@ -3,29 +3,12 @@ import 'package:app_one/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const MyApp());
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
-    );
-  }
-}
-
-class Home extends StatefulWidget {
-  const Home({super.key});
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,10 +16,10 @@ class _HomeState extends State<Home> {
       themeMode: ThemeMode.light,
       theme: ThemeData(primarySwatch: Colors.brown),
       darkTheme: ThemeData(brightness: Brightness.light),
-      initialRoute: "home",
+      initialRoute: "login",
       routes: {
         "home": (context) => const HomeScreen(),
-        "/login": (context) => const LoginScreen(),
+        "login": (context) => const LoginScreen(),
       },
     );
   }
