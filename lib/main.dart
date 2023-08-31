@@ -1,3 +1,5 @@
+import 'package:app_one/screens/home_screen.dart';
+import 'package:app_one/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,63 +28,16 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.purple,
-      appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(
-            Icons.person,
-            size: 60,
-            color: Colors.white,
-          ),
-          const Text(
-            "Login Form",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(16)),
-            child: Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: const TextField(
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.person),
-                        border: InputBorder.none),
-                  ),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: const TextField(
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.email),
-                        suffixIcon: Icon(Icons.remove_red_eye),
-                        border: InputBorder.none),
-                  ),
-                ),
-                ElevatedButton(onPressed: () {}, child: const Text("Login")),
-              ],
-            ),
-          )
-        ],
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.brown),
+      darkTheme: ThemeData(brightness: Brightness.light),
+      initialRoute: "home",
+      routes: {
+        "home": (context) => const HomeScreen(),
+        "/login": (context) => const LoginScreen(),
+      },
     );
   }
 }
