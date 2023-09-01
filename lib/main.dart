@@ -1,3 +1,4 @@
+import 'package:app_one/constants/route.dart';
 import 'package:app_one/screens/home_screen.dart';
 import 'package:app_one/screens/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(brightness: Brightness.light),
       initialRoute: "login",
       routes: {
-        "home": (context) => const HomeScreen(),
-        "login": (context) => const LoginScreen(),
+        Routes.home: (context) => const HomeScreen(),
+        Routes.login: (context) => const LoginScreen(),
       },
     );
   }
